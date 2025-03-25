@@ -9,8 +9,9 @@ const app = express();
 const PORT = 3001;
 
 const corsOptions = {
-  origin: "https://csstatspy.github.io/csstatspy.web/",
+  origin: "https://csstatspy.github.io",
   methods: "GET,POST",
+  allowedHeaders: "Content-Type",
 };
 
 app.use(cors(corsOptions));

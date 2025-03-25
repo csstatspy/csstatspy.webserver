@@ -21,6 +21,7 @@ module.exports = async (req, res) => {
     const result = response.data.response;
 
     if (result.success === 1) {
+      res.setHeader("Access-Control-Allow-Origin", "https://csstatspy.github.io");
       res.json({ steamid: result.steamid });
     } else {
       res.status(404).json({ error: "Vanity URL not found" });

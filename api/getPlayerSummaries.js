@@ -21,6 +21,7 @@ module.exports = async (req, res) => {
     const playerData = response.data.response.players[0];
 
     if (playerData) {
+      res.setHeader("Access-Control-Allow-Origin", "https://csstatspy.github.io");
       res.json(playerData);
     } else {
       res.status(404).json({ error: "Player not found" });
